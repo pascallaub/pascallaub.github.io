@@ -28,21 +28,28 @@ h1 {
 
 .matrix-column {
     flex: 1;
-    animation: fall 3s linear infinite;
     overflow: hidden;
-}
-
-.matrix-column span {
+    position: relative;
+  }
+  
+/* Dynamische Zeichen */
+.matrix-column::before {
+    content: "0101101010010110"; /* Beispiel-Zeichenfolge */
+    display: block;
+    white-space: pre;
     font-size: 1rem;
     color: rgba(0, 255, 0, 0.5);
-    animation: appear 1s ease-in infinite;
+    animation: matrix-fall 5s linear infinite;
 }
+  
 
 @keyframes matrix-fall {
     0% {
+        top: -100%;
         transform: translateY(-100%);
     }
     100% {
+        top: 100%;
         transform: translateY(100%);
     }
 }
@@ -95,22 +102,4 @@ input[type="radio"] {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-/* Sichtbarkeit der Abschnitte */
-section {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    text-align: center;
-}
-
-/* Zusätzliche Effekte */
-section:target {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
