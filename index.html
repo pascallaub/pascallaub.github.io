@@ -75,32 +75,32 @@
         </div>
     </div>
     <script>
-        function randomText(){
-            var text = ("!@#$%§&=?~*<>{}[]^+()")
-            letters = text[Math.floor(Math.random() * text.length)];
-            return letters;
-        }
-    
         function rain() {
             const cloud = document.querySelector('.cloud');
-            const drop = document.createElement('div');
-            drop.classList.add('drop');
-            cloud.appendChild(drop);
-    
-            const left = Math.floor(Math.random() * window.innerWidth);
-            const size = Math.random() * 1.5 + 0.5;
-            const duration = Math.random() * 2 + 3;
-    
-            drop.innerText = randomText();
-            drop.style.left = '${left}px';
-            drop.style.fontSize = '${0.5 + size}em';
-            drop.style.animationDuration = '${duration}s';
-    
-            setTimeout(() => {
-                cloud.removeChild(drop)
-            }, duration * 1000);
+            const dropCount = 10;
+            for (let i =0; i < dropCount; i++) {
+                const drop = document.createElement('div');
+                drop.classList.add('drop');
+                cloud.appendChild(drop);
+
+                const left = Math.random() * window.innerWidth; // Zufällige X-Position
+                drop.style.left = `${left}px`;
+
+                drop.innerText = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96)); // Zufälliges Katakana-Zeichen
+
+                const size = Math.random() * 1.5 + 0.5; // Größe zwischen 0.5em und 2em
+                drop.style.fontSize = `${size}em`;
+
+                const duration = Math.random() * 2 + 5; // Fallzeit zwischen 5s und 7s
+                drop.style.animationDuration = `${duration}s`;
+
+                setTimeout(() => {
+                    if (cloud.contains(drop)) {
+                        cloud.removeChild(drop);
+                    }
+                }, duration * 1000);
+            }
         }
-    
         setInterval(rain, 100);
 </script>
 </body>
