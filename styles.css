@@ -88,7 +88,7 @@ nav ul li a:hover {
     
 }
 
-.matrix-background::before {
+.matrix-column::before {
     content: "010101101100110010011010010110011011011001101";
     white-space: pre;
     display: block;
