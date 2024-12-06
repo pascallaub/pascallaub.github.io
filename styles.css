@@ -27,30 +27,130 @@ h1 {
 }
 
 .matrix-column {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-  }
-  
-/* Dynamische Zeichen */
-.matrix-column::before {
-    content: "0101101010010110"; /* Beispiel-Zeichenfolge */
-    display: block;
-    white-space: pre;
+    position: absolute;
     font-size: 1rem;
     color: rgba(0, 255, 0, 0.5);
-    animation: matrix-fall 5s linear infinite;
+    white-space: pre;
+    animation: matrix-fall 20s linear infinite;
+  }
+
+.matrix-column:nth-child(1) {
+    animation-duration: 20s;
+    animation-delay: 0.2s;
 }
-  
+
+.matrix-column:nth-child(2) {
+    animation-duration: 20s;
+    animation-delay: 0.4s;
+}
+
+.matrix-column:nth-child(3) {
+    animation-duration: 20s;
+    animation-delay: 0.6s;
+}
+
+.matrix-column:nth-child(4) {
+    animation-duration: 20s;
+    animation-delay: 0.8s;
+}
+
+.matrix-column:nth-child(5) {
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+.matrix-column:nth-child(6) {
+    animation-duration: 20s;
+    animation-delay: 1.2s;
+}
+
+.matrix-column:nth-child(7) {
+    animation-duration: 20s;
+    animation-delay: 1.4s;
+}
+
+.matrix-column:nth-child(8) {
+    animation-duration: 20s;
+    animation-delay: 1.6s;
+}
+
+.matrix-column:nth-child(9) {
+    animation-duration: 20s;
+    animation-delay: 1.8s;
+}
+
+.matrix-column:nth-child(10) {
+    animation-duration: 20s;
+    animation-delay: 2s;
+}
+
+.matrix-column:nth-child(11) {
+    animation-duration: 20s;
+    animation-delay: 2.2s;
+}
+
+.matrix-column:nth-child(12) {
+    animation-duration: 20s;
+    animation-delay: 2.4s;
+}
+
+.matrix-column:nth-child(13) {
+    animation-duration: 20s;
+    animation-delay: 2.6s;
+}
+
+.matrix-column:nth-child(14) {
+    animation-duration: 20s;
+    animation-delay: 2.8s;
+}
+
+.matrix-column:nth-child(15) {
+    animation-duration: 20s;
+    animation-delay: 3s;
+}
+
+.matrix-column:nth-child(16) {
+    animation-duration: 20s;
+    animation-delay: 3.2s;
+}
+
+.matrix-column:nth-child(17) {
+    animation-duration: 20s;
+    animation-delay: 3.4s;
+}
 
 @keyframes matrix-fall {
     0% {
         top: -100%;
-        transform: translateY(-100%);
     }
     100% {
         top: 100%;
-        transform: translateY(100%);
+    }
+}
+
+.matrix-column::before {
+    content: "01010101010101";
+    animation: random-char 1s linear infinite;
+}
+
+@keyframes random-char {
+    0% {
+        content: "00101010101010101010101010101001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
+    }
+    20% {
+        content: "01010101010101010101010101011001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
+    }
+    40% {
+        content: "00101010101010101010101010101001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
+    }
+    60% {
+        content: "01010101010101010101010101011001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
+    }
+    80% {
+        content: "01010101010101010101010101010001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
+    }
+    100% {
+        content: "10101010101010101010101010101001010101010101010101010101010010101010101010101010101010100101010101010101010101010101";
     }
 }
 
