@@ -1,3 +1,4 @@
+/* Allgemeine Style */
 body {
     margin: 0;
     overflow: hidden;
@@ -6,6 +7,27 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Matrix Hintergrund */
 .matrix-background {
     position: fixed;
     top: 0;
@@ -37,4 +59,22 @@ body {
     line-height: 30px;
     color: rgba(0, 255, 0, 0.5);
     animation: matrix-fall 3s linear infinite;
+}
+
+/* Sichtbarkeit der Abschnitte */
+section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+}
+
+/* Zusätzliche Effekte */
+section:target {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
