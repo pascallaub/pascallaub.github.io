@@ -7,46 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="column">
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-        </div>
-        <div class="column">
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-            <span>0</span>
-            <span>1</span>
-        </div>
-
-    <div class="content-wrapper">
+    <div class="cloud"></div>
+    <div class="header">
         <h1>My Portfolio</h1>
+    </div>
+    <div class="content-wrapper"></div>
         <div class="navigation">
             <label for="section1">About</label>
             <label for="section2">Projects</label>
@@ -84,7 +49,7 @@
                                 <a href="https://github.com/pascallaub/Taschenrechner/blob/main/Taschenrechner.py" target="_blank">Calculator</a>
                             </p>
                             <p>
-                                <img src="images\calculator.png">
+                                <img src="/images/calculator.png">
                             </p>
                         </details>
                     </p>
@@ -109,5 +74,34 @@
             </div>
         </div>
     </div>
+    <script>
+        function randomText(){
+            var text = ("!@#$%§&=?~*<>{}[]^+()")
+            letters = text[Math.floor(Math.random() * text.length)];
+            return letters;
+        }
+    
+        function rain() {
+            const cloud = document.querySelector('.cloud');
+            const drop = document.createElement('div');
+            drop.classList.add('drop');
+            cloud.appendChild(drop);
+    
+            const left = Math.floor(Math.random() * window.innerWidth);
+            const size = Math.random() * 1.5 + 0.5;
+            const duration = Math.random() * 2 + 3;
+    
+            drop.innerText = randomText();
+            drop.style.left = '${left}px';
+            drop.style.fontSize = '${0.5 + size}em';
+            drop.style.animationDuration = '${duration}s';
+    
+            setTimeout(() => {
+                cloud.removeChild(drop)
+            }, duration * 1000);
+        }
+    
+        setInterval(rain, 100);
+</script>
 </body>
 </html>
