@@ -1,7 +1,10 @@
 /* Allgemeine Style */
 body {
     margin: 0;
-    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: black;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
