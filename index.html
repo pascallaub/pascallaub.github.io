@@ -7,37 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="matrix-background"></div>
-    <div class="container">
-        <header>
-            <h1>My Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="Home">Home</a></li>
-                    <li><a href="About">About</a></li>
-                    <li><a href="Projects">Projects</a></li>
-                    <li><a href="Contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="Home">
-                <h2>Welcome</h2>
-                <p>This is my Matrix inspired Portfolio!</p>
-            </section>
-            <section id="About">
+    <div class="matrix-background">
+        <div class="matrix-column">0</div>
+        <div class="matrix-column">1</div>
+        <div class="matrix-column">§</div>
+        <div class="matrix-column">$</div>
+        <div class="matrix-column">%</div>
+        <div class="matrix-column">&</div>
+        <div class="matrix-column">*</div>
+        <div class="matrix-column">+</div>
+        <div class="matrix-column">#</div>
+        <div class="matrix-column">^</div>
+    </div>
+
+    <div class="content-wrapper">
+        <h1>My Portfolio</h1>
+        <div class="navigation">
+            <label for="section1">About</label>
+            <label for="section2">Projects</label>
+            <label for="section3">Contact</label>
+        </div>
+
+        <input type="radio" name="content" id="section1" checked>
+        <input type="radio" name="content" id="section2">
+        <input type="radio" name="content" id="section3">
+
+        <div class="content">
+            <div class="section" id="content1">
                 <h2>About Me</h2>
-                <p>Details about me^^</p>
-            </section>
-            <section id="Projects">
+                <p>Later</p>
+            </div>
+            <div class="section" id="content2">
                 <h2>Projects</h2>
-                <p>Projects here</p>
-            </section>
-            <section id="Contact">
+                <p>Later</p>
+            </div>
+            <div class="section" id="content3">
                 <h2>Contact</h2>
-                <p>Contact Details</p>
-            </section>
-        </main>
+                <p>Later</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

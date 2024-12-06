@@ -1,66 +1,35 @@
 /* Allgemeine Style */
 body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
     background: black;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    color: white;
     overflow: hidden;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
+h1 {
     text-align: center;
-}
-
-header h1 {
+    margin-top: 20px;
     font-size: 3rem;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: #00ff00;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
+    color: rgba(0, 255, 0, 0.5);
 }
 
 /* Matrix Hintergrund */
 .matrix-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     z-index: 1;
-    background: black;
     display: flex;
+    pointer-events: none;
 }
 
 .matrix-column {
     flex: 1;
-    animation: fall linear infinite;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    animation: fall 3s linear infinite;
+    overflow: hidden;
 }
 
 .matrix-column span {
@@ -78,43 +47,52 @@ nav ul li a:hover {
     }
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-    
-}
-
-.matrix-column::before {
-    content: "010101101100110010011010010110011011011001101";
-    white-space: pre;
-    display: block;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: rgba(0, 255, 0, 0.5);
-    animation: matrix-fall 3s linear infinite;
-}
-
-/* Sichtbarkeit der Abschnitte */
-section {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 80%;
+.content-wrapper {
+    position: relative;
+    z-index: 2;
     text-align: center;
 }
 
-/* Zusätzliche Effekte */
-section:target {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation label {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navigation label:hover {
+    background-color: rgba(0, 255, 0, 0.8);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+#section1:checked ~ .content #content1,
+#section2:checked ~ .content #content2,
+#section3:checked ~ .content #content3 {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
