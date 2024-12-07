@@ -30,37 +30,16 @@ header {
     color: var(--green);
 }
 
-@keyframes colorChange{
-    0%{
-        color: #0ae227;
-    }
-    50% {
-        color: #12f33f;
-    }
-    100%{
-        color: #0ceea6;
-    }
+.card {
+    border: 1px solid #0f0;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@keyframes animateColor {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.4);
 }
 
-@keyframes fall {
-    0% {
-        transform: translateX(-100%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
 .container {
     position: absolute;
     top: 0;
@@ -149,5 +128,37 @@ input[type="radio"] {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes colorChange{
+    0%{
+        color: #0ae227;
+    }
+    50% {
+        color: #12f33f;
+    }
+    100%{
+        color: #0ceea6;
+    }
+}
+
+@keyframes animateColor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
     }
 }
