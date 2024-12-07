@@ -33,6 +33,7 @@ header {
 .card {
     border: 1px solid #0f0;
     transition: transform 0.3s, box-shadow 0.3s;
+    font-size: large;
 }
 
 .card:hover {
@@ -78,6 +79,7 @@ header {
     position: relative;
     z-index: 3;
     position: relative;
+    font-size: large;
 }
 
 .navigation {
@@ -86,6 +88,7 @@ header {
     margin-top: 10px;
     z-index: 3;
     position: relative;
+    font-size: large;
 }
 
 .navigation label {
@@ -111,6 +114,7 @@ input[type="radio"] {
     text-align: center;
     z-index: 3;
     position: relative;
+    font-size: large;
 }
 
 #section1:checked ~ .content #content1,
