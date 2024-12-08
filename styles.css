@@ -316,31 +316,4 @@ input[type="radio"] {
     }
 }
 
-@media (max-width: 768px) {
-    .carousel {
-        max-width: 100%;
-    }
-
-    .carousel-content {
-        flex-direction: column;
-    }
-
-    .card {
-        margin: 5px 0;
-    }
-
-    .carousel-controls label {
-        padding: 5px 10px;
-    }
-
-    .flip-card {
-        width: 90%;
-        height: auto;
-    }
-
-    .flip-card img {
-        height: auto;
-        max-height: 300px;
-    }
-}
 
