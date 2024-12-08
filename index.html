@@ -28,7 +28,7 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="pascallaub.github.io\images\selfie.JPG" alt="My Picture">
+                            <img src="/images/selfie.JPG" alt="My Picture">
                         </div>
                         <div class="flip-card-back">
                             <p>Hi, I'm an all-round tech enthusiast with a passion for everything to do with computers, programming and innovation.<br>
@@ -55,7 +55,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io/images/calculator.png" alt="Calculator Code">
+                                    <img src="/images/calculator.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>Calculator</h3>
@@ -67,7 +67,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io/images/adressbuch.png" alt="Calculator Code">
+                                    <img src="/images/adressbuch.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>Adressbuch</h3>
@@ -79,7 +79,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io/images/projekt.png" alt="Calculator Code">
+                                    <img src="/images/projekt.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>Project Management Tool</h3>
@@ -91,7 +91,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io/images/filemanager.png" alt="Calculator Code">
+                                    <img src="/images/filemanager.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>Filemanager</h3>
@@ -103,7 +103,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io/images/encrypt.png" alt="Calculator Code">
+                                    <img src="/images/encrypt.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>File Encrypt and Decrypt Tool</h3>
@@ -115,7 +115,7 @@
                         <div class="card flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="pascallaub.github.io\images\rust.png" alt="Calculator Code">
+                                    <img src="/images/rust.png" alt="Calculator Code">
                                 </div>
                                 <div class="flip-card-back">
                                     <h3>To-Do-List</h3>
@@ -152,15 +152,15 @@
                 cloud.appendChild(drop);
 
                 const left = Math.random() * window.innerWidth; // Zufällige X-Position
-                drop.style.left = `${left}px`;
+                drop.style.left = ${left}px;
 
                 drop.innerText = String.fromCharCode(0x30A0 + Math.floor(Math.random() * 96)); // Zufälliges Katakana-Zeichen
 
                 const size = Math.random() * 1.5 + 0.5; // Größe zwischen 0.5em und 2em
-                drop.style.fontSize = `${size}em`;
+                drop.style.fontSize = ${size}em;
 
                 const duration = Math.random() * 2 + 5; // Fallzeit zwischen 5s und 7s
-                drop.style.animationDuration = `${duration}s`;
+                drop.style.animationDuration = ${duration}s;
 
                 setTimeout(() => {
                     if (cloud.contains(drop)) {
