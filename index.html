@@ -41,62 +41,96 @@
                 </div>
             </div>
             <div class="section" id="content2">
+            <section class="project-carousel">
                 <h2>Projects</h2>
-                <details>
-                    <summary>Python</summary>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/file-encrypt-decrypt-tool" target="_blank">File Encrypt and Decrypt Tool</a></h3>
-                            <p>A small tool to encrypt and decrypt data. After registration, every user has an own encryption/decryption key and an user folder. GUI is very simple and small.</p>
-                            <img src="/images/encrypt.png" alt="File Encrypt and Decrypt Code" height="600px">
+                <div class="carousel">
+                    <input type="radio" name="carousel" id="project1" checked>
+                    <input type="radio" name="carousel" id="project2">
+                    <input type="radio" name="carousel" id="project3">
+                    <input type="radio" name="carousel" id="project4">
+                    <input type="radio" name="carousel" id="project5">
+                    <input type="radio" name="carousel" id="project6">
+
+                    <div class="carousel-content">
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/calculator.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Calculator</h3>
+                                    <p>It's a simple, basic calculator and was a good project to understand the syntax and basics of python.</p>
+                                    <a href="https://github.com/pascallaub/Taschenrechner" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/adressbuch.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Adressbuch</h3>
+                                    <p>Another simple project to understand more basics. Contacts are saved in JSON-File.</p>
+                                    <a href="https://github.com/pascallaub/Adressbuch" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/projekt.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Project Management Tool</h3>
+                                    <p>It's a simple, basic project management tool with sqlite.</p>
+                                    <a href="https://github.com/pascallaub/project-managing-tool" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/filemanager.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>Filemanager</h3>
+                                    <p>In this project i've made a filemanger with a GUI. It's possible to copy, move, change name and delete files.</p>
+                                    <a href="https://github.com/pascallaub/filemanager-exercise" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/encrypt.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>File Encrypt and Decrypt Tool</h3>
+                                    <p>A small tool to encrypt and decrypt data. After registration, every user has an own encryption/decryption key and an user folder. GUI is very simple and small.</p>
+                                    <a href="https://github.com/pascallaub/file-encrypt-decrypt-tool" target="_blank">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="/images/calculator.png" alt="Calculator Code">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3>To-Do-List</h3>
+                                    <p>It's a simple GUI with basic features. First look and try with Rust.</p>
+                                    <a href="https://github.com/pascallaub/to-do-list-rust" target="_blank">View Project</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/filemanager-exercise" target="_blank">Filemanager</a></h3>
-                            <p>In this project i've made a filemanger with a GUI. It's possible to copy, move, change name and delete files.</p>
-                            <img src="/images/projekt.png" alt="Project Management Tool Code" height="600px">
-                        </div>
+                    <div class="carousel-controls">
+                        <button class="prev">◀</button>
+                        <button class="next">▶</button>
                     </div>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/project-managing-tool" target="_blank">Project Management Tool</a></h3>
-                            <p>It's a simple, basic project management tool with sqlite.</p>
-                            <img src="/images/projekt.png" alt="Project Management Tool Code" height="600px">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/Adressbuch" target="_blank">Adressbuch</a></h3>
-                            <p>Another simple project to understand more basics. Contacts are saved in JSON-File.</p>
-                            <img src="/images/adressbuch.png" alt="Adressbuch Code" height="600px">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/Taschenrechner" target="_blank">Calculator</a></h3>
-                            <p>It's a simple, basic calculator and was a good project to understand the syntax and basics of python.</p>
-                            <img src="/images/calculator.png" alt="Calculator Code" height="600px">
-                        </div>
-                    </div>
-                </details>
-                <details>
-                    <summary>HTML</summary>
-                    <p>
-                        Ich mache gerne Sport.
-                    </p>
-                </details>
-                <details>
-                    <summary>Rust</summary>
-                    <div class="card">
-                        <div class="details">
-                            <h3><a href="https://github.com/pascallaub/to-do-list-rust" target="_blank">To-Do-List</a></h3>
-                            <p>It's a simple GUI with basic features. First look and try with Rust.</p>
-                            <img src="/images/rust.png" alt="To-Do-List Code" height="800px">
-                        </div>
-                    </div>
-                </details>
-            </div>
+                </div>
+            </section>
             <div class="section" id="content3">
                 <h2>Contact</h2>
                 <p>Email: <a href="mailto:pascal@pascallaub.de">pascal@pascallaub.de</a></p>
