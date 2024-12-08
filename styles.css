@@ -31,8 +31,8 @@ header {
 }
 
 .flip-card {
-    width: 600px;
-    height: 800px;
+    width: 400px;
+    height: 600px;
     perspective: 1000px;
     margin: 20px auto;
 }
@@ -71,7 +71,7 @@ header {
 }
 
 .flip-card-back {
-    background-color: #0f0;
+    background-color: rgb(7, 172, 7);
     color: #000;
     transform: rotateY(180deg);
     padding: 20px;
