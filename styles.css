@@ -320,7 +320,7 @@ input[type="radio"] {
 
 @media (max-width: 768px) {
     .flip-card {
-        width: 50%;
+        width: 90%;
         height: auto;
         margin: 10px 0;
     }
@@ -329,6 +329,7 @@ input[type="radio"] {
     }
     .carousel-content {
         flex-wrap: wrap;
+        max-width: 50%;
     }
     .card {
         min-width: 90%;
@@ -344,7 +345,7 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .flip-card {
-        width: 50%;
+        width: 90%;
         height: auto;
         margin: 10px 0;
     }
@@ -353,6 +354,7 @@ input[type="radio"] {
     }
     .carousel-content {
         flex-wrap: wrap;
+        max-width: 50%;
     }
     .card {
         min-width: 90%;
