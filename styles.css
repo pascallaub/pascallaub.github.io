@@ -54,7 +54,6 @@ header {
 .carousel-content {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    flex-wrap: nowrap;
 }
 
 .carousel-controls {
