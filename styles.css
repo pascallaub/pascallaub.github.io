@@ -45,8 +45,8 @@ header {
 
 .carousel {
     position: relative;
-    width: auto;
-    max-width: 800px;
+    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -54,7 +54,7 @@ header {
 .carousel-content {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: auto;
+    flex-wrap: nowrap;
 }
 
 .carousel-controls {
@@ -156,16 +156,16 @@ header {
 }
 
 .card {
-    max-width: 100%;
-    height: auto;
-    flex-shrink: 0;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    margin: 10px;
 }
 
 .card img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .card:hover {
@@ -320,57 +320,30 @@ input[type="radio"] {
 }
 
 @media (max-width: 768px) {
+    .carousel {
+        max-width: 100%;
+    }
+
+    .carousel-content {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 5px 0;
+    }
+
+    .carousel-controls label {
+        padding: 5px 10px;
+    }
+
     .flip-card {
         width: 90%;
         height: auto;
-        margin: 10px 0;
     }
-    .carousel {
-        flex-direction: column;
-    }
-    .carousel-content {
-        flex-wrap: wrap;
-        max-width: 50%;
-    }
-    .card {
-        min-width: 90%;
-    }
-    .navigation label {
-        font-size: 1rem;
-        padding: 8px 10px;
-    }
-    .navigation {
-        flex-direction: column;
+
+    .flip-card img {
+        height: auto;
+        max-height: 300px;
     }
 }
 
-@media (max-width: 480px) {
-    .flip-card {
-        width: 90%;
-        height: auto;
-        margin: 10px 0;
-    }
-    .carousel {
-        flex-direction: column;
-    }
-    .carousel-content {
-        flex-wrap: wrap;
-        max-width: 50%;
-    }
-    .card {
-        min-width: 90%;
-    }
-    .navigation label {
-        font-size: 1rem;
-        padding: 8px 10px;
-    }
-    .navigation {
-        flex-direction: column;
-    }
-    body {
-        font-size: 1rem;
-    }
-    h1, h2 {
-        font-size: 1.5rem;
-    }
-}
