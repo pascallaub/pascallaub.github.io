@@ -320,7 +320,7 @@ input[type="radio"] {
 
 @media (max-width: 768px) {
     .flip-card {
-        width: 90%;
+        width: 50%;
         height: auto;
         margin: 10px 0;
     }
@@ -344,7 +344,7 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .flip-card {
-        width: 90%;
+        width: 50%;
         height: auto;
         margin: 10px 0;
     }
