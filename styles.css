@@ -315,3 +315,23 @@ input[type="radio"] {
         opacity: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .flip-card {
+        width: 300px;
+        height: 400px;
+    }
+    .navigation label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        width: 250px;
+        height: 350px;
+    }
+    .navigation label {
+        font-size: 0.9rem;
+    }
+}
