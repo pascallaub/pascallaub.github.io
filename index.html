@@ -19,11 +19,13 @@
             <label for="section1">About</label>
             <label for="section2">Projects</label>
             <label for="section3">Contact</label>
+            <label for="section4">Quotes</label>
         </div>
 
         <input type="radio" name="content" id="section1" checked>
         <input type="radio" name="content" id="section2">
         <input type="radio" name="content" id="section3">
+        <input type="radio" name="content" id="section4">
 
         <div class="content">
             <div class="section" id="content1">
@@ -143,8 +145,93 @@
                 <p>Email: <a href="mailto:pascal@pascallaub.de" style="color: rgb(0, 255, 0);">pascal@pascallaub.de</a></p>
                 <p>Homepage: <a href="https://www.pascallaub.de" target="_blank" style="color: rgb(0, 255, 0);">Click me</a></p>
             </div>
+            <div class="section" id="content4">
+                <h2>Zitat des Tages</h2>
+                <div class="quotes-section">
+                    <div id="quote-container">
+                        <p id="quote-text"></p>
+                        <p id="quote-author"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        const quotes = [
+            "Der größte Ruhm im Leben liegt nicht im Fallen, sondern im Aufstehen, wenn wir fallen.",
+            "Der Weg zum Erfolg ist, mit dem Reden aufzuhören und mit dem Tun zu beginnen.",
+            "Ihre Zeit ist begrenzt, also verschwenden Sie sie nicht mit den Fehlern anderer. Lassen Sie sich nicht von einem Dogma einfangen - das bedeutet, mit den Ergebnissen des Denkens anderer Menschen zu leben.",
+            "Wenn das Leben vorhersehbar wäre, würde es aufhören, Leben zu sein, und wäre ohne Geschmack.",
+            "Wenn Sie auf das schauen, was Sie im Leben haben, werden Sie immer mehr haben. Wenn Sie auf das schauen, was Sie im Leben nicht haben, werden Sie nie genug haben.",
+            "Wenn Sie Ihre Ziele lächerlich hoch ansetzen und damit scheitern, werden Sie vor dem Erfolg aller anderen scheitern.",
+            "Das Leben ist das, was passiert, wenn man damit beschäftigt ist, andere Pläne zu machen.",
+            "Verbreiten Sie Liebe, wo immer Sie hingehen. Lassen Sie niemanden zu Ihnen kommen, ohne glücklicher zu sein.",
+            "Wenn Sie das Ende Ihres Seils erreichen, machen Sie einen Knoten hinein und halten Sie sich fest.",
+            "Denken Sie immer daran, dass Sie absolut einzigartig sind. Genau wie jeder andere auch.",
+            "Beurteilen Sie jeden Tag nicht nach der Ernte, die Sie einfahren, sondern nach den Samen, die Sie säen.",
+            "Die Zukunft gehört denjenigen, die an die Schönheit ihrer Träume glauben.",
+            "Verbreiten Sie Liebe, wo immer Sie hingehen. Lass niemanden zu dir kommen, ohne glücklicher zu sein.",
+            "Wenn Sie das Ende Ihres Seils erreichen, machen Sie einen Knoten und halten Sie sich fest.",
+            "Denken Sie immer daran, dass Sie absolut einzigartig sind. Genau wie jeder andere auch.",
+            "Beurteilen Sie jeden Tag nicht nach der Ernte, die Sie einfahren, sondern nach den Samen, die Sie säen.",
+            "Letztendlich sind es nicht die Jahre in Ihrem Leben, die zählen. Es ist das Leben in Ihren Jahren.",
+            "Viele der Misserfolge im Leben sind Menschen, die nicht erkannten, wie nahe sie dem Erfolg waren, als sie aufgaben.",
+            "Sie haben Köpfchen in Ihrem Kopf. Sie haben Füße in Ihren Schuhen. Sie können sich in jede Richtung lenken, die Sie wählen.",
+            "Das Leben ist nie fair, und vielleicht ist es für die meisten von uns gut, dass es das nicht ist.",
+            "Der Zweck unseres Lebens ist es, glücklich zu sein.",
+            "Man darf jetzt nicht alles so schlechtreden, wie es war.",
+            "Wir dürfen jetzt nur nicht den Sand in den Kopf stecken.",
+            "Jetzt müssen wir die Köpfe hochkrempeln. Und die Ärmel natürlich auch.",
+            "Für weniger als 10.000 Dollar am Tag stehen wir gar nicht erst auf!",
+            "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt.",
+            "Zuerst ignorieren sie dich, dann lachen sie über dich, dann bekämpfen sie dich und dann gewinnst du.",
+            "Es liegt nicht so viel daran, wie wir es um uns haben, sondern wie wir es in uns haben, darauf kommt es an.",
+            "Sie können alle Blumen abschneiden, den Frühling aber können sie nicht aufhalten.",
+            "Wenn ich einmal nicht mehr bin, werden euch die Imperialisten ersäufen wie einen Wurf junger Katzen.",
+            "Auf einer geteerten Strasse kann man den richtigen Weg nicht finden."
+        ];
+
+        const authors = [
+            "Nelson Mandela",
+            "Walt Disney",
+            "Steve Jobs",
+            "Eleanor Roosevelt",
+            "Oprah Winfrey",
+            "James Cameron",
+            "John Lennon",
+            "Mutter Teresa",
+            "Franklin D. Roosevelt",
+            "Magaret Mead",
+            "Robert Louis Stevenson",
+            "Eleanor Roosevelt",
+            "Abraham Lincoln",
+            "Thomas A. Edison",
+            "Dr. Seuss",
+            "Oscar Wilde",
+            "Dalai Lama",
+            "Fredi Bobic",
+            "Lothar Mathäus",
+            "Lukas Podolski",
+            "Linda Evangelista",
+            "Albert Einstein",
+            "Mahatma Gandhi",
+            "Hans Christian Andersen",
+            "Che Guevara",
+            "Josef Stalin",
+            "Bob Marley"
+        ];
+
+        function getRandomQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            const randomAuthor = authors[Math.floor(Math.random() * authors.length)];
+
+            document.getElementById('quote-text').textContent = `"${randomQuote}"`;
+            document.getElementById('quote-author').textContent = `- ${randomAuthor}`;
+        }
+
+        window.onload = getRandomQuote();
+        setInterval(getRandomQuote, 10000)
+    </script>
     <script>
         document.body.addEventListener('click', function() {
         const audio = document.getElementById('background-audio');

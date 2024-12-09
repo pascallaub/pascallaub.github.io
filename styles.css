@@ -29,6 +29,14 @@ header {
     color: var(--green);
 }
 
+.quotes-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .project-carousel {
     text-align: center;
     color: white;
@@ -241,7 +249,8 @@ input[type="radio"] {
 
 #section1:checked ~ .content #content1,
 #section2:checked ~ .content #content2,
-#section3:checked ~ .content #content3 {
+#section3:checked ~ .content #content3,
+#section4:checked ~ .content #content4 {
     display: block;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -263,6 +272,18 @@ input[type="radio"] {
 }
 #project6:checked ~ .carousel-content {
     transform: translateX(-500%);
+}
+
+#quote-text {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#quote-author {
+    font-size: 1.2em;
+    color: #555;
 }
 
 @keyframes fadeIn {
