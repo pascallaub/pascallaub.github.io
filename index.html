@@ -11,7 +11,7 @@
     <div class="header">
         <h1>My Portfolio</h1>
     </div>
-    <audio id="background-audio" loop>
+    <audio id="background-audio" autoplay loop muted>
         <source src="winter.mp3" type="audio/mpeg">
     </audio>
     <div class="content-wrapper"></div>
@@ -146,16 +146,15 @@
         </div>
     </div>
     <script>
-        window.onload = function() {
+        document.body.addEventListener('click', function() {
         const audio = document.getElementById('background-audio');
-        if (audio) {
+        audio.muted = false;
+        audio.play().then(() => {
             audio.volume = 0.25;
-            audio.play();
-        } else {
-            console.error("Audio-Tag konnte nicht gefunden werden.");
-            }
-        };
-
+        }).catch((error) => {
+            console.log('Audio konnte nicht abgespielt werden:', error);
+        });
+    });
     </script>
     <script>
         function rain() {
