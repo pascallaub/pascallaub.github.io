@@ -236,6 +236,7 @@ input[type="radio"] {
     z-index: 3;
     position: relative;
     font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #section1:checked ~ .content #content1,
