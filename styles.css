@@ -34,14 +34,6 @@ header {
     color: white;
 }
 
-.project-carousel h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    text-transform: uppercase;
-    border-bottom: 2px solid rgb(0, 255, 0);
-    padding-bottom: 10px;
-}
-
 .carousel {
     position: relative;
     width: 100%;
