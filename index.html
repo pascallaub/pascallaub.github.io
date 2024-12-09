@@ -11,7 +11,7 @@
     <div class="header">
         <h1>My Portfolio</h1>
     </div>
-    <audio id="background-audio" autoplay loop muted>
+    <audio id="background-audio" autoplay loop controls>
         <source src="winter.mp3" type="audio/mpeg">
     </audio>
     <div class="content-wrapper"></div>
@@ -233,14 +233,17 @@
         setInterval(getRandomQuote, 10000)
     </script>
     <script>
-        document.body.addEventListener('click', function() {
         const audio = document.getElementById('background-audio');
+        const muteButton = document.getElementById('mute-button');
+
+        document.body.addEventListener('click', function handleAudioPlay() {
         audio.muted = false;
         audio.play().then(() => {
             audio.volume = 0.25;
         }).catch((error) => {
             console.log('Audio konnte nicht abgespielt werden:', error);
         });
+        document.body.removeEventListener('click', handleAudioPlay);
     });
     </script>
     <script>

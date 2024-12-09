@@ -29,6 +29,12 @@ header {
     color: var(--green);
 }
 
+.mute-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
 .quotes-section {
     background-color: #f4f4f4;
     padding: 20px;
