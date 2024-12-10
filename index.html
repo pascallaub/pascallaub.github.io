@@ -11,9 +11,10 @@
     <div class="header">
         <h1>My Portfolio</h1>
     </div>
-    <audio id="background-audio" autoplay loop controls>
+    <audio id="background-audio" autoplay loop>
         <source src="winter.mp3" type="audio/mpeg">
     </audio>
+    <button id="mute-button">Mute</button>
     <div class="content-wrapper"></div>
         <div class="navigation">
             <label for="section1">About</label>
@@ -21,6 +22,9 @@
             <label for="section3">Contact</label>
             <label for="section4">Quotes</label>
         </div>
+        <audio id="nav-sound">
+            <source src="quack.mp3" type="audio/mpeg">
+        </audio>
 
         <input type="radio" name="content" id="section1" checked>
         <input type="radio" name="content" id="section2">
@@ -230,7 +234,20 @@
         }
 
         window.onload = getRandomQuote();
-        setInterval(getRandomQuote, 10000)
+        setInterval(getRandomQuote, 60000)
+    </script>
+    <script>
+        const navAudio = document.getElementById('nav-sound');
+        const navLinks = document.querySelectorAll('.navigation label');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navAudio.currentTime = 0;
+                navAudio.play().catch(error => {
+                    console.log('Sound konnte nicht abgespielt werden:', error);
+                });
+            });
+        });
     </script>
     <script>
         const audio = document.getElementById('background-audio');
@@ -244,6 +261,16 @@
             console.log('Audio konnte nicht abgespielt werden:', error);
         });
         document.body.removeEventListener('click', handleAudioPlay);
+
+        document.body.addEventListener('click', function() {
+            if(audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute'
+            }
+        })
     });
     </script>
     <script>
