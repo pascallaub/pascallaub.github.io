@@ -15,21 +15,23 @@
         <source src="winter.mp3" type="audio/mpeg">
     </audio>
     <button id="mute-button">Mute</button>
-    <div class="content-wrapper"></div>
+    <div class="content-wrapper">
         <div class="navigation">
             <label for="section1">About</label>
             <label for="section2">Projects</label>
             <label for="section3">Contact</label>
             <label for="section4">Quotes</label>
+            <label for="section5">Games</label>
         </div>
         <audio id="nav-sound">
             <source src="quack.mp3" type="audio/mpeg">
         </audio>
-
+    </div>
         <input type="radio" name="content" id="section1" checked>
         <input type="radio" name="content" id="section2">
         <input type="radio" name="content" id="section3">
         <input type="radio" name="content" id="section4">
+        <input type="radio" name="content" id="section5">
 
         <div class="content">
             <div class="section" id="content1">
@@ -158,6 +160,10 @@
                     </div>
                 </div>
             </div>
+            <div class="section" id="content5">
+                <h2>Games</h2>
+                <canvas id="board"></canvas>
+            </div>
         </div>
     </div>
     <script>
@@ -253,16 +259,18 @@
         const audio = document.getElementById('background-audio');
         const muteButton = document.getElementById('mute-button');
 
-        document.body.addEventListener('click', function handleAudioPlay() {
-        audio.muted = false;
-        audio.play().then(() => {
-            audio.volume = 0.25;
-        }).catch((error) => {
-            console.log('Audio konnte nicht abgespielt werden:', error);
-        });
-        document.body.removeEventListener('click', handleAudioPlay);
+        function handleAudioPlay() {
+            audio.muted = false;
+            audio.play().then(() => {
+                audio.volume = 0.25;
+            }).catch((error) => {
+                console.log('Audio konnte nicht abgespielt werden:', error);
+            });
+            document.body.removeEventListener('click', handleAudioPlay);
+        }
+        document.body.addEventListener('click', handleAudioPlay);
 
-        document.body.addEventListener('click', function() {
+        function toggleMute() {
             if(audio.muted) {
                 audio.muted = false;
                 muteButton.textContent = 'Mute';
@@ -270,8 +278,26 @@
                 audio.muted = true;
                 muteButton.textContent = 'Unmute'
             }
-        })
-    });
+        }
+        muteButton.addEventListener('click', toggleMute)
+    </script>
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            createSmokeParticle(event.pageX, event.pageY);
+        });
+
+        function createSmokeParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.classList.add('smoke-particle');
+            document.body.appendChild(particle);
+
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+            });
+        }
     </script>
     <script>
         function rain() {

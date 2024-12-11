@@ -19,6 +19,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    text-align: center;
 }
 
 header {
@@ -29,10 +30,13 @@ header {
     color: var(--green);
 }
 
-.mute-button {
-    position: fixed;
+#mute-button {
+    position: relative;
     top: 10px;
     right: 10px;
+    pointer-events: auto;
+    visibility: visible;
+    z-index: 3;
 }
 
 .quotes-section {
@@ -186,7 +190,6 @@ header {
     animation: animateColor 10s infinite;
     filter: hue-rotate(0deg);
     overflow: hidden;
-    z-index: 0;
 }
 
 .cloud {
@@ -253,10 +256,21 @@ input[type="radio"] {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.smoke-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(119, 249, 99, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade-out 2s forwards;
+}
+
 #section1:checked ~ .content #content1,
 #section2:checked ~ .content #content2,
 #section3:checked ~ .content #content3,
-#section4:checked ~ .content #content4 {
+#section4:checked ~ .content #content4,
+#section5:checked ~ .content #content5 {
     display: block;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -290,6 +304,17 @@ input[type="radio"] {
 #quote-author {
     font-size: 1.2em;
     color: #555;
+}
+
+@keyframes fade-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
 }
 
 @keyframes fadeIn {
@@ -333,4 +358,15 @@ input[type="radio"] {
         transform: translateY(100vh);
         opacity: 0;
     }
+}
+
+/* Game */
+
+#board {
+    background-color: rgb(4, 8, 249);
+    border-top: 5px solid skyblue;
+    border-left: 5px solid skyblue;
+    border-right: 5px solid skyblue;
+    width: 100%;
+    height: 400px;
 }
