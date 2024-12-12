@@ -362,14 +362,55 @@ input[type="radio"] {
 
 /* Game */
 
-.game-board {
+#game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40 px;
-    opacity: 3;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .memoryCard {
-    border: 1px solid;
-    background: #aeb7cd;
+    position: relative;
+    width: 100px;
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.memoryCard div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+.memoryBack {
+    background: rgba(0, 100, 0, 0.9);
+    color: white;
+    transform: rotateY(0deg);
+}
+
+.memoryFront {
+    background: whitesmoke;
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+.memoryCard.flipped .memoryFront {
+    transform: rotateY(0deg);
+}
+
+.memoryCard.flipped .memoryBack {
+    transform: rotateY(180deg);
+}
+
+.memoryCard div {
+    transition: transform 0.5s ease-in-out;
 }
