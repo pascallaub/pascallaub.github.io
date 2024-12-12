@@ -1,6 +1,6 @@
 const gameboard = document.getElementById("game-board");
-const cardValues = ["a", "b", "c", "d", "e", "f", "g", "h"];
-const memoryCards = [...cardValues, ...cardValues];
+let cardValues = ["a", "b", "c", "d", "e", "f", "g", "h"];
+let memoryCards = [...cardValues, ...cardValues];
 
 memoryCards.sort(() => 0.5 - Math.random());
 
@@ -8,6 +8,7 @@ let flippedCards = [];
 let lockBoard = false;
 
 function createGameboard() {
+    gameboard.innerHTML = '';
     memoryCards.forEach((value, index) => {
         const memoryCard = document.createElement('div');
         memoryCard.classList.add('memoryCard');
@@ -24,8 +25,8 @@ function createGameboard() {
         memoryCard.appendChild(memoryBack);
 
         memoryCard.addEventListener('click', () => flipMemory(memoryCard));
-        gameboard.appendChild(memoryCard)
-    })
+        gameboard.appendChild(memoryCard);
+    });
 }
 
 function flipMemory(cardMemory) {
@@ -52,7 +53,33 @@ function flipMemory(cardMemory) {
                 lockBoard = false;
             }, 1000);
         }
+        checkWin();
     }
+}
+
+function checkWin() {
+    const flippedCards = document.querySelectorAll('.memoryCard.flipped');
+    if (flippedCards.length === document.querySelectorAll('.memoryCard').length) {
+        setTimeout(() => {
+            alert("Winner, Winner, Chicken Dinner!");
+            resetGame();
+        }, 500);
+    }
+}
+
+function resetGame() {
+    memoryCards = [...cardValues, ...cardValues];
+    memoryCards.sort(() => 0.5 - Math.random());
+
+    flippedCards = [];
+    lockBoard = false;
+
+    const allCards = document.querySelectorAll('.memoryCard');
+    allCards.forEach(card => {
+        card.classList.remove('flipped'); // Entfernt die "flipped"-Klasse
+    });
+
+    createGameboard();
 }
 
 createGameboard()
