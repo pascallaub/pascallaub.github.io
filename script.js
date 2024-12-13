@@ -89,4 +89,94 @@ function resetGame() {
     createGameboard();
 }
 
-createGameboard()
+// TicTacToe
+const tictactoeBoard = document.getElementById("tictactoe-board");
+const board = Array(9).fill("");
+let currentPlayer = "X";
+
+function createTicTacToeBoard() {
+    tictactoeBoard.innerHTML = "";
+
+    board.forEach((cell, index) => {
+        const cellElement = document.createElement('div');
+        cellElement.classList.add('tictactoe-cell');
+        cellElement.dataset.index = index;
+        cellElement.textContent = cell;
+
+        cellElement.addEventListener('click', () => handleMove(index));
+
+        tictactoeBoard.appendChild(cellElement);
+    });
+}
+
+function handleMove(index) {
+    if (board[index] !== "") return;
+
+    board[index] = currentPlayer;
+    updateBoard();
+
+    checkTicTacToeWin();
+
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+}
+
+function updateBoard() {
+    const cells = document.querySelectorAll('.tictactoe-cell');
+    cells.forEach((cell, index) => {
+        cell.textContent = board[index];
+        if (board[index] !== "") {
+            cell.classList.add('taken');
+        }
+    });
+}
+
+function checkTicTacToeWin() {
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ];
+
+    for (const pattern of winPatterns) {
+        const [a, b, c] = pattern;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            setTimeout(() => {
+                alert(`${board[a]} gewinnt!`);
+                resetTicTacToe();
+            }, 100);
+            return;
+        }
+    }
+
+    if (!board.includes("")) {
+        setTimeout(() => {
+            alert("Unentschieden!");
+            resetTicTacToe();
+        }, 100);
+    }
+}
+
+function resetTicTacToe () {
+    board.fill("");
+    currentPlayer = "X";
+    createTicTacToeBoard();
+}
+
+// Umschalten des Spiels
+function showGame(game) {
+    document.querySelectorAll('.game-container').forEach(container => {
+        container.classList.remove('active');
+    });
+
+    if (game === "Memory") {
+        document.getElementById('memory-container').classList.add('active');
+    } else if (game === "Tic Tac Toe") {
+        document.getElementById('tictactoe-container').classList.add('active');
+    }
+}
+
+document.getElementById('memory-btn').addEventListener('click', () => showGame("Memory"));
+document.getElementById('tictactoe-btn').addEventListener('click', () => showGame("Tic Tac Toe"));
+
+createTicTacToeBoard();
+createGameboard();
