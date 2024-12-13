@@ -1,5 +1,8 @@
 const gameboard = document.getElementById("game-board");
-let cardValues = ["a", "b", "c", "d", "e", "f", "g", "h"];
+let cardValues = [
+    "images/card-1.png", "images/card-2.png", "images/card-3.png", "images/card-4.png",
+    "images/card-5.png", "images/card-6.png", "images/card-7.png", "images/card-8.png"
+];
 let memoryCards = [...cardValues, ...cardValues];
 
 memoryCards.sort(() => 0.5 - Math.random());
@@ -15,11 +18,15 @@ function createGameboard() {
 
         const memoryFront = document.createElement('div');
         memoryFront.classList.add('memoryFront')
-        memoryFront.innerText = value;
+        const frontImage = document.createElement('img');
+        frontImage.src = value;
+        memoryFront.appendChild(frontImage);
 
         const memoryBack = document.createElement('div');
         memoryBack.classList.add('memoryBack');
-        memoryBack.innerText = "?";
+        const backImage = document.createElement('img');
+        backImage.src = "images/card.png";
+        memoryBack.appendChild(backImage)
 
         memoryCard.appendChild(memoryFront);
         memoryCard.appendChild(memoryBack);
@@ -39,8 +46,8 @@ function flipMemory(cardMemory) {
         lockBoard = true;
 
         const [cardMemory1, cardMemory2] = flippedCards;
-        const cardMemory1Value = cardMemory1.innerText;
-        const cardMemory2Value = cardMemory2.innerText;
+        const cardMemory1Value = cardMemory1.querySelector('.memoryFront img').src;
+        const cardMemory2Value = cardMemory2.querySelector('.memoryFront img').src;
 
         if (cardMemory1Value === cardMemory2Value) {
             flippedCards = [];
