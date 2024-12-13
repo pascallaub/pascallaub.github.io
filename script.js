@@ -94,6 +94,23 @@ const tictactoeBoard = document.getElementById("tictactoe-board");
 const board = Array(9).fill("");
 let currentPlayer = "X";
 
+function computerMove() {
+    let emptyIndices = [];
+
+    for (let i = 0; i < board.length; i++) {
+        if (board[i] === "") {
+            emptyIndices.push(i);
+        }
+    }
+    const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+
+    board[randomIndex] = "O";
+    updateBoard();
+    checkTicTacToeWin();
+    currentPlayer = "X";
+}
+
+
 function createTicTacToeBoard() {
     tictactoeBoard.innerHTML = "";
 
@@ -110,14 +127,16 @@ function createTicTacToeBoard() {
 }
 
 function handleMove(index) {
-    if (board[index] !== "") return;
-
-    board[index] = currentPlayer;
-    updateBoard();
-
-    checkTicTacToeWin();
-
-    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    if (board[index] === "" && currentPlayer === "X") {
+        board[index] = "X";
+        updateBoard();
+        if (checkTicTacToeWin() === null) {
+            currentPlayer = "O";
+            setTimeout(computerMove, 500); // KI-Zug nach kurzer Pause
+        } else {
+            checkTicTacToeWin();
+        }
+    }
 }
 
 function updateBoard() {
@@ -144,7 +163,7 @@ function checkTicTacToeWin() {
                 alert(`${board[a]} gewinnt!`);
                 resetTicTacToe();
             }, 100);
-            return;
+            return board[a];
         }
     }
 
@@ -153,7 +172,10 @@ function checkTicTacToeWin() {
             alert("Unentschieden!");
             resetTicTacToe();
         }, 100);
+        return 'tie';
     }
+
+    return null;
 }
 
 function resetTicTacToe () {
