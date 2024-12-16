@@ -270,7 +270,8 @@ input[type="radio"] {
 #section2:checked ~ .content #content2,
 #section3:checked ~ .content #content3,
 #section4:checked ~ .content #content4,
-#section5:checked ~ .content #content5 {
+#section5:checked ~ .content #content5,
+#section6:checked ~ .content #content6 {
     display: block;
     animation: fadeIn 0.5s ease-in-out;
 }
