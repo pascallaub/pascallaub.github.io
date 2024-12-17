@@ -63,12 +63,13 @@ body {
     padding: 0;
 }
 
-.todo-list li {
+.todo-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     margin-bottom: 10px;
-    background-color: #f9f9f9;
+    background-color: #dad6d6;
     border-radius: 5px;
     padding: 10px;
 }
