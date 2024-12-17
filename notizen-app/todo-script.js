@@ -36,7 +36,6 @@ function renderTodos() {
         });
 
         const span = document.createElement('span');
-        span.classList.add('todo-span');
         span.textContent = todo.text;
         if (todo.completed) {
             span.style.textDecoration = 'line-through';
