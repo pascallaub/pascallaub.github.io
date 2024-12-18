@@ -97,6 +97,20 @@ body {
     background-color: #c9392c;
 }
 
+.change-btn {
+    background-color: #3652ee;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.change-btn:hover {
+    background-color: #2846f5;
+}
+
 .todo-info {
     text-align: center;
     font-size: 0.9rem;
