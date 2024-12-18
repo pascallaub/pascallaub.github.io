@@ -1,6 +1,7 @@
 const form = document.getElementById('todo-form');
 const input = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
+const todoInfo = document.getElementById('todo-info');
 
 let todos = [];
 
@@ -83,6 +84,8 @@ function renderTodos() {
         li.appendChild(deleteButton)
         todoList.appendChild(li);
     });
+
+    todoCounter();
 }
 
 function saveTodos() {
@@ -97,4 +100,9 @@ function loadTodos() {
             renderTodos();
         }
     });
+}
+
+function todoCounter() {
+    const openTodos = todos.filter(todo => !todo.completed).length;
+    todoInfo.textContent = `${openTodos} offene Aufgaben!`;
 }
